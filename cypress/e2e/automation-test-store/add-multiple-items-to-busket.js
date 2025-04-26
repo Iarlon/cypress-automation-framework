@@ -13,12 +13,7 @@ describe("Add multiples items to busket", () => {
         homePage.clickOn_HairCare_Button();
 
     });
-    it("Add specific items to busket",{
-        retries: {
-            runMode: 2,
-            openMode: 2
-        }
-    }, () => {
+    it("Add specific items to busket",{retries: {runMode: 2,openMode: 2}}, () => {
         cy.get('@product').then((product) => {
 
             product.productName.forEach(element => {
