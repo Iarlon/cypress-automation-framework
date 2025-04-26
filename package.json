@@ -7,14 +7,15 @@
     "triggerAllTests": "npx cypress run",
     "triggerAllTests-headed": "npx cypress run --headed",
     "triggerAllTests-headless-chrome": "npx cypress run --browser chrome",
-    "triggerAllTests-webdriver-uni": "npx cypress run --spec cypress/e2e/webdriveruni/*",
+    "triggerAllTests-webdriver-uni": "npx cypress run --spec cypress/e2e/web-driver-university/*",
     "triggerAllTests-automation-test-store": "npx cypress run --spec cypress/e2e/automation-test-store/*",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "junit-merge-delete": "rm -rf cypress/results/junit/results.xml",
     "junit-delete": "rm -rf cypress/results/junit/*",
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "mochawesome-merge-delete": "rm -rf mochawesome-report/* || true",
-    "regression-test": "npm run junit-delete && npm run mochawesome-merge-delete && npm run triggerAllTests && npm run junit-merge && npm run mochawesome-merge"
+    "regression-test": "npm run junit-delete && npm run mochawesome-merge-delete && npm run triggerAllTests && npm run junit-merge && npm run mochawesome-merge",
+    "cypress-multi-browser": "npm run triggerAllTests --browser electron && npm run triggerAllTests --browser edge && npm run triggerAllTests --browser firefox"
   },
   "author": "Iarlon Oliveira",
   "license": "ISC",
