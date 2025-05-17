@@ -16,7 +16,7 @@ pipeline {
                         git url: 'https://github.com/Iarlon/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTests-automation-test-store-dashboard'
+                        bat 'npm run %Script%'
                     }
                 }
                 stage('Cypress test suite 2') {
@@ -27,7 +27,7 @@ pipeline {
                         git url: 'https://github.com/Iarlon/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTests-automation-test-store-dashboard'
+                        bat 'npm run %Script%'
                     }
                 }
                 
