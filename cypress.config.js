@@ -1,8 +1,12 @@
 const { defineConfig } = require("cypress");
+const cucumber = require("cypress-cucumber-preprocessor").default;
 
 module.exports = defineConfig({
   e2e: {
-    
+    setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber());
+    },
+  projectId: "cq8bqy",
   specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
   chromeWebSecurity: false,
   defaultCommandTimeout: 10000,
